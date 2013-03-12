@@ -8,6 +8,5 @@ Feature: Using a dutch file as input and other file as an output
     And I put them through the kernel
     Then the output should match the fixture "<output_file>"
   Examples:
-    | input_file	| output_file	     	|
-    | dutch.txt		| dutch_tokenized.kaf	|
+    | input.token.kaf	| output.token.term.kaf	| 
 
