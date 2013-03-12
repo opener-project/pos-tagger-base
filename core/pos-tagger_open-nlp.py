@@ -4,7 +4,7 @@
 import os
 
 this_folder = os.path.dirname(os.path.realpath(__file__))
-opennlp_folder = os.path.join(this_folder,'../lib/opennlp')
+opennlp_folder = os.path.join(this_folder,'opennlp')
 model_folder = os.path.join(opennlp_folder,'models')
 pos_model = 'nl-pos-maxent.bin'
 
