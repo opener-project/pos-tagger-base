@@ -1,12 +1,13 @@
-Feature: Using a dutch file as input and other file as an output
-  In order to tokenize the file
+Feature: Using files as input and output
+  In order to tokenize text
   Using a file as an input
   Using a file as an output
 
-  Scenario Outline: tokenize dutch input file.
+  Scenario Outline: Tokenize the text
     Given the fixture file "<input_file>"
-    And I put them through the kernel
+    And I put it through the kernel
     Then the output should match the fixture "<output_file>"
   Examples:
-    | input.token.kaf	| output.token.term.kaf	| 
+    | input_file            | output_file                       |
+    | input.token.kaf       | output.token.term.kaf             |
 
