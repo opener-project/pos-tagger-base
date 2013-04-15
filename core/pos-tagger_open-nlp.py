@@ -7,6 +7,7 @@ this_folder = os.path.dirname(os.path.realpath(__file__))
 opennlp_folder = os.path.join(this_folder,'opennlp')
 model_folder = os.path.join(opennlp_folder,'models')
 pos_model = 'nl-pos-maxent.bin'
+mapping_pos_filename = 'mapping.postag.wotan.to.opener.csv'
 
 __version__ = '1.0 8-Mar-2013'
 
@@ -26,6 +27,25 @@ from lxml.etree import ElementTree as ET, Element as EL, PI
 from VUKafParserPy.KafParserMod import KafParser
 from token_matcher import token_matcher
 
+
+
+mapping_wotan_to_kaf = None
+
+def map_pos_tag(pos):
+  global mapping_wotan_to_kaf
+  if mapping_wotan_to_kaf is None:
+    mapping_wotan_to_kaf = {}
+    file_mapping = os.path.join(this_folder,mapping_pos_filename)
+    fic = open(file_mapping,'r')
+    for line in fic:
+      fields = line.strip().split('\t')
+      if len(fields)==3:
+        wotan_pos = fields[0]
+        kaf_pos = fields[1]
+        mapping_wotan_to_kaf[wotan_pos] = kaf_pos
+    fic.close()
+  opener_pos = mapping_wotan_to_kaf.get(pos,'O')
+  return opener_pos
 
 
 if __name__=='__main__':
@@ -51,6 +71,8 @@ if __name__=='__main__':
   if my_lang != 'nl':
     print>>sys.stderr,'The language of the input KAF is '+my_lang+' and only can be Dutch (nl)'
     sys.exit(-1)
+    
+  
     
   
   
@@ -89,22 +111,22 @@ if __name__=='__main__':
       position = token.rfind('_')
       lemma = token[:position]
       pos = token[position+1:]
-      pos = token[-1]
-      if pos in ['N','R','G','V','A','O']:
-        type_term = 'open'
-      else:
-        type_term = 'close'
       my_id='t_'+str(n)
-      data[my_id] = (lemma,pos,type_term)
+      data[my_id] = (lemma,pos)
       new_tokens.append((lemma,my_id))
       
     mapping_tokens = {}
     token_matcher(sentence,new_tokens,mapping_tokens)
     for token_new,id_new in new_tokens:
-      lemma,pos,type_term = data[id_new]
+      lemma,pos = data[id_new]
+      opener_pos = map_pos_tag(pos)
+      if opener_pos in ['N','R','G','V','A','O']:
+        type_term = 'open'
+      else:
+        type_term = 'close'      
       ele_term = EL('term',attrib={'tid':id_new,
                                    'type':type_term,
-                                   'pos':pos,
+                                   'pos':opener_pos,
                                    'morphofeat':pos,
                                    'lemma':lemma})
       ref_tokens = mapping_tokens[id_new]

@@ -1,0 +1,13 @@
+Adj	G	Adjective
+Adv	A	Adverb
+Art	D	Article determiner
+Conj	C	Conjunction
+Int	O	Interjection
+N	N	Noun
+Num	O	Numeral
+Misc	O	Miscelaneous
+Prep	P	Preposition
+Pron	Q	Pronoun
+Punc	O	Punctuation
+V	V	Verb
+
