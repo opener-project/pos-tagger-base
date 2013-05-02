@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-#-*- coding: utf8 *-*
+#-*- coding: utf-8 *-*
+# Ruben Izquierdo
+# Vrije University of Amsterdam
 
 import os
 os.environ["LC_CTYPE"]='en_US.UTF-8'
