@@ -63,6 +63,19 @@ oof
 4. Push to the branch (`git push origin features/my-new-feature`)
 5. If you're confident, merge your changes into master.
 
+POS-tags models
+---------------
+* Dutch-maxent --> http://opennlp.sourceforge.net/models-1.5/nl-pos-maxent.bin
+* Dutch-perceptron --> http://opennlp.sourceforge.net/models-1.5/nl-pos-perceptron.bin
+* German-maxent --> http://opennlp.sourceforge.net/models-1.5/de-pos-maxent.bin
+* German-perceptron --> http://opennlp.sourceforge.net/models-1.5/de-pos-perceptron.bin
+
+POS-tags sets
+------------
+* Dutch -->  trained on conllx alpino data, wotan tagset
+* German --> trained on TIGER corpus, STSS tagset
+
+
 
 Contact
 -------
