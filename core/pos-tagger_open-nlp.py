@@ -2,6 +2,7 @@
 #-*- coding: utf8 *-*
 
 import os
+os.environ["LC_CTYPE"]='en_US.UTF-8'
 
 this_folder = os.path.dirname(os.path.realpath(__file__))
 opennlp_folder = os.path.join(this_folder,'opennlp')
@@ -113,6 +114,7 @@ if __name__=='__main__':
       proc.stdin.close()
       text_with_pos = proc.stdout.read().strip().decode('utf-8')  ## variable is unicode
       proc.terminate()
+
     except Exception as e:
        print>>sys.stderr,str(e)
        sys.exit(-1)
