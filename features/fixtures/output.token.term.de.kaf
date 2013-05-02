@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<KAF xml:lang="de">
+  <kafHeader>
+    <linguisticProcessors layer="text">
+      <lp timestamp="2013-05-02T14:07:12CEST" version="1.0" name="Open-nlp sentence splitter"/>
+      <lp timestamp="2013-05-02T14:07:12CEST" version="1.0" name="Open-nlp tokenizer"/>
+    </linguisticProcessors>
+    <linguisticProcessor layer="term">
+      <lp timestamp="*" version="1.0" name="Open nlp pos tagger"/>
+    </linguisticProcessor>
+  </kafHeader>
+  <text>
+    <wf wid="w_1" sent="1">Im</wf>
+    <wf wid="w_2" sent="1">Rahmen</wf>
+    <wf wid="w_3" sent="1">des</wf>
+    <wf wid="w_4" sent="1">Königinnentages</wf>
+    <wf wid="w_5" sent="1">hat</wf>
+    <wf wid="w_6" sent="1">Königin</wf>
+    <wf wid="w_7" sent="1">Beatrix</wf>
+    <wf wid="w_8" sent="1">zugunsten</wf>
+    <wf wid="w_9" sent="1">ihres</wf>
+    <wf wid="w_10" sent="1">Sohnes</wf>
+    <wf wid="w_11" sent="1">Willem-Alexander</wf>
+    <wf wid="w_12" sent="1">(</wf>
+    <wf wid="w_13" sent="1">Bild</wf>
+    <wf wid="w_14" sent="1">)</wf>
+    <wf wid="w_15" sent="1">als</wf>
+    <wf wid="w_16" sent="1">Staatsoberhaupt</wf>
+    <wf wid="w_17" sent="1">der</wf>
+    <wf wid="w_18" sent="1">Niederlande</wf>
+    <wf wid="w_19" sent="1">abgedankt</wf>
+    <wf wid="w_20" sent="1">.</wf>
+  </text>
+  <terms>
+    <term lemma="Im" morphofeat="APPRART" pos="P" tid="t_1" type="close">
+      <span>
+        <target id="w_1"/>
+      </span>
+    </term>
+    <term lemma="Rahmen" morphofeat="NN" pos="N" tid="t_2" type="open">
+      <span>
+        <target id="w_2"/>
+      </span>
+    </term>
+    <term lemma="des" morphofeat="ART" pos="D" tid="t_3" type="close">
+      <span>
+        <target id="w_3"/>
+      </span>
+    </term>
+    <term lemma="Königinnentages" morphofeat="NN" pos="N" tid="t_4" type="open">
+      <span>
+        <target id="w_4"/>
+      </span>
+    </term>
+    <term lemma="hat" morphofeat="VAFIN" pos="V" tid="t_5" type="open">
+      <span>
+        <target id="w_5"/>
+      </span>
+    </term>
+    <term lemma="Königin" morphofeat="NN" pos="N" tid="t_6" type="open">
+      <span>
+        <target id="w_6"/>
+      </span>
+    </term>
+    <term lemma="Beatrix" morphofeat="NE" pos="R" tid="t_7" type="open">
+      <span>
+        <target id="w_7"/>
+      </span>
+    </term>
+    <term lemma="zugunsten" morphofeat="APPR" pos="P" tid="t_8" type="close">
+      <span>
+        <target id="w_8"/>
+      </span>
+    </term>
+    <term lemma="ihres" morphofeat="PPOSAT" pos="Q" tid="t_9" type="close">
+      <span>
+        <target id="w_9"/>
+      </span>
+    </term>
+    <term lemma="Sohnes" morphofeat="NN" pos="N" tid="t_10" type="open">
+      <span>
+        <target id="w_10"/>
+      </span>
+    </term>
+    <term lemma="Willem-Alexander" morphofeat="NE" pos="R" tid="t_11" type="open">
+      <span>
+        <target id="w_11"/>
+      </span>
+    </term>
+    <term lemma="(" morphofeat="$(" pos="O" tid="t_12" type="open">
+      <span>
+        <target id="w_12"/>
+      </span>
+    </term>
+    <term lemma="Bild" morphofeat="NN" pos="N" tid="t_13" type="open">
+      <span>
+        <target id="w_13"/>
+      </span>
+    </term>
+    <term lemma=")" morphofeat="$(" pos="O" tid="t_14" type="open">
+      <span>
+        <target id="w_14"/>
+      </span>
+    </term>
+    <term lemma="als" morphofeat="APPR" pos="P" tid="t_15" type="close">
+      <span>
+        <target id="w_15"/>
+      </span>
+    </term>
+    <term lemma="Staatsoberhaupt" morphofeat="NN" pos="N" tid="t_16" type="open">
+      <span>
+        <target id="w_16"/>
+      </span>
+    </term>
+    <term lemma="der" morphofeat="ART" pos="D" tid="t_17" type="close">
+      <span>
+        <target id="w_17"/>
+      </span>
+    </term>
+    <term lemma="Niederlande" morphofeat="NE" pos="R" tid="t_18" type="open">
+      <span>
+        <target id="w_18"/>
+      </span>
+    </term>
+    <term lemma="abgedankt" morphofeat="VVPP" pos="V" tid="t_19" type="open">
+      <span>
+        <target id="w_19"/>
+      </span>
+    </term>
+    <term lemma="." morphofeat="$." pos="O" tid="t_20" type="open">
+      <span>
+        <target id="w_20"/>
+      </span>
+    </term>
+  </terms>
+</KAF>

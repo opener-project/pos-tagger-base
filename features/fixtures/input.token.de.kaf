@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<KAF xml:lang="de">
+  <kafHeader>
+    <linguisticProcessors layer="text">
+      <lp timestamp="2013-05-02T14:07:12CEST" version="1.0" name="Open-nlp sentence splitter"/>
+      <lp timestamp="2013-05-02T14:07:12CEST" version="1.0" name="Open-nlp tokenizer"/>
+    </linguisticProcessors>
+  </kafHeader>
+  <text>
+    <wf wid="w_1" sent="1">Im</wf>
+    <wf wid="w_2" sent="1">Rahmen</wf>
+    <wf wid="w_3" sent="1">des</wf>
+    <wf wid="w_4" sent="1">Königinnentages</wf>
+    <wf wid="w_5" sent="1">hat</wf>
+    <wf wid="w_6" sent="1">Königin</wf>
+    <wf wid="w_7" sent="1">Beatrix</wf>
+    <wf wid="w_8" sent="1">zugunsten</wf>
+    <wf wid="w_9" sent="1">ihres</wf>
+    <wf wid="w_10" sent="1">Sohnes</wf>
+    <wf wid="w_11" sent="1">Willem-Alexander</wf>
+    <wf wid="w_12" sent="1">(</wf>
+    <wf wid="w_13" sent="1">Bild</wf>
+    <wf wid="w_14" sent="1">)</wf>
+    <wf wid="w_15" sent="1">als</wf>
+    <wf wid="w_16" sent="1">Staatsoberhaupt</wf>
+    <wf wid="w_17" sent="1">der</wf>
+    <wf wid="w_18" sent="1">Niederlande</wf>
+    <wf wid="w_19" sent="1">abgedankt</wf>
+    <wf wid="w_20" sent="1">.</wf>
+  </text>
+</KAF>

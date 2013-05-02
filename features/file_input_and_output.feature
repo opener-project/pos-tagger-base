@@ -10,4 +10,5 @@ Feature: Using files as input and output
   Examples:
     | input_file            | output_file                       |
     | input.token.kaf       | output.token.term.kaf             |
+    | input.token.de.kaf    | output.token.term.de.kaf          |
 

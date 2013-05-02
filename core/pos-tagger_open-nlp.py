@@ -6,16 +6,24 @@ import os
 this_folder = os.path.dirname(os.path.realpath(__file__))
 opennlp_folder = os.path.join(this_folder,'opennlp')
 model_folder = os.path.join(opennlp_folder,'models')
-pos_model = 'nl-pos-maxent.bin'
-mapping_pos_filename = 'mapping.postag.wotan.to.opener.csv'
 
-__version__ = '1.0 8-Mar-2013'
+## Config for Dutch
+pos_model_nl = 'nl-pos-maxent.bin'
+##pos_moded_nl = 'nl-pos-perceptron.bin'
+mapping_pos_filename_nl = 'mapping.postag.wotan.to.opener.csv'
+########################
 
-## Last changes
-###################################
+## Config for German
+pos_model_de = 'de-pos-maxent.bin'
+##pos_moded_de = 'de-pos-perceptron.bin'
+mapping_pos_filename_de = 'mapping.postag.stss.to.opener.csv'
+########################
 
-## TO DO
-# Deal with the tag set..
+
+mapping_postag_to_kaf = None
+mapping_pos_filename = ""
+__version__ = '2-May-2013'
+
 
 import sys
 import operator
@@ -29,12 +37,10 @@ from token_matcher import token_matcher
 
 
 
-mapping_wotan_to_kaf = None
-
 def map_pos_tag(pos):
-  global mapping_wotan_to_kaf
-  if mapping_wotan_to_kaf is None:
-    mapping_wotan_to_kaf = {}
+  global mapping_postag_to_kaf
+  if mapping_postag_to_kaf is None:
+    mapping_postag_to_kaf = {}
     file_mapping = os.path.join(this_folder,mapping_pos_filename)
     fic = open(file_mapping,'r')
     for line in fic:
@@ -42,9 +48,9 @@ def map_pos_tag(pos):
       if len(fields)==3:
         wotan_pos = fields[0]
         kaf_pos = fields[1]
-        mapping_wotan_to_kaf[wotan_pos] = kaf_pos
+        mapping_postag_to_kaf[wotan_pos] = kaf_pos
     fic.close()
-  opener_pos = mapping_wotan_to_kaf.get(pos,'O')
+  opener_pos = mapping_postag_to_kaf.get(pos,'O')
   return opener_pos
 
 
@@ -68,8 +74,14 @@ if __name__=='__main__':
   input_kaf = KafParser(sys.stdin)
   my_lang = input_kaf.getLanguage()
   
-  if my_lang != 'nl':
-    print>>sys.stderr,'The language of the input KAF is '+my_lang+' and only can be Dutch (nl)'
+  if my_lang == 'nl':
+    pos_model= pos_model_nl
+    mapping_pos_filename= mapping_pos_filename_nl
+  elif my_lang =='de':
+    pos_model = pos_model_de
+    mapping_pos_filename = mapping_pos_filename_de
+  else:
+    print>>sys.stdout,'The language of the input KAF is "'+my_lang+'" and only can be Dutch (nl) or German (de)'
     sys.exit(-1)
     
   
