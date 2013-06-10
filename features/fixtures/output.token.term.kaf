@@ -52,7 +52,7 @@
         <target id="w_3"/>
       </span>
     </term>
-    <term lemma="van" morphofeat="p" pos="p" tid="t_4" type="close">
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t_4" type="close">
       <span>
         <target id="w_4"/>
       </span>
@@ -72,12 +72,12 @@
         <target id="w_7"/>
       </span>
     </term>
-    <term lemma="," morphofeat="c" pos="c" tid="t_8" type="close">
+    <term lemma="," morphofeat="Punc" pos="O" tid="t_8" type="open">
       <span>
         <target id="w_8"/>
       </span>
     </term>
-    <term lemma="31" morphofeat="m" pos="m" tid="t_9" type="close">
+    <term lemma="31" morphofeat="Num" pos="O" tid="t_9" type="open">
       <span>
         <target id="w_9"/>
       </span>
@@ -87,12 +87,12 @@
         <target id="w_10"/>
       </span>
     </term>
-    <term lemma="1938" morphofeat="m" pos="m" tid="t_11" type="close">
+    <term lemma="1938" morphofeat="Num" pos="O" tid="t_11" type="open">
       <span>
         <target id="w_11"/>
       </span>
     </term>
-    <term lemma=")" morphofeat="c" pos="c" tid="t_12" type="close">
+    <term lemma=")" morphofeat="Punc" pos="O" tid="t_12" type="open">
       <span>
         <target id="w_12"/>
       </span>
@@ -102,12 +102,12 @@
         <target id="w_13"/>
       </span>
     </term>
-    <term lemma="sinds" morphofeat="p" pos="p" tid="t_14" type="close">
+    <term lemma="sinds" morphofeat="Prep" pos="P" tid="t_14" type="close">
       <span>
         <target id="w_14"/>
       </span>
     </term>
-    <term lemma="30" morphofeat="m" pos="m" tid="t_15" type="close">
+    <term lemma="30" morphofeat="Num" pos="O" tid="t_15" type="open">
       <span>
         <target id="w_15"/>
       </span>
@@ -117,7 +117,7 @@
         <target id="w_16"/>
       </span>
     </term>
-    <term lemma="1980" morphofeat="m" pos="m" tid="t_17" type="close">
+    <term lemma="1980" morphofeat="Num" pos="O" tid="t_17" type="open">
       <span>
         <target id="w_17"/>
       </span>
@@ -127,12 +127,12 @@
         <target id="w_18"/>
       </span>
     </term>
-    <term lemma="van" morphofeat="p" pos="p" tid="t_19" type="close">
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t_19" type="close">
       <span>
         <target id="w_19"/>
       </span>
     </term>
-    <term lemma="het" morphofeat="t" pos="t" tid="t_20" type="close">
+    <term lemma="het" morphofeat="Art" pos="D" tid="t_20" type="close">
       <span>
         <target id="w_20"/>
       </span>
@@ -142,7 +142,7 @@
         <target id="w_21"/>
       </span>
     </term>
-    <term lemma="der" morphofeat="t" pos="t" tid="t_22" type="close">
+    <term lemma="der" morphofeat="Art" pos="D" tid="t_22" type="close">
       <span>
         <target id="w_22"/>
       </span>
