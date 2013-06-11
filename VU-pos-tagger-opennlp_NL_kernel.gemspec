@@ -1,25 +1,20 @@
-# -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-
-require 'VU-pos-tagger-opennlp_NL_kernel'
+require File.expand_path('../lib/VU-pos-tagger-opennlp_NL_kernel', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "VU-pos-tagger-opennlp_NL_kernel"
-  gem.version       = Opener::Kernel::VU::POSTagger::OpenNLP::NL::VERSION
-  gem.authors       = ["sb-olr","sparkboxx"]
-  gem.email         = ["sujit@olery.com", "wilco@olery.com"]
-  gem.description   = %q{POS tagger kernel for dutch using open nlp }
-  gem.summary       = %q{Use this gem in a component}
-  gem.homepage      = "http://opener-project.github.com/"
+  gem.name        = "VU-pos-tagger-opennlp_NL_kernel"
+  gem.version     = Opener::Kernel::VU::POSTagger::OpenNLP::NL::VERSION
+  gem.authors     = ['development@olery.com']
+  gem.summary     = 'POS tagger for Dutch and German using OpenNLP'
+  gem.description = gem.summary
+  gem.homepage    = "http://opener-project.github.com/"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
-  gem.bindir        = 'bin'
+  gem.files       = `git ls-files`.split($/)
+  gem.executables = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files  = gem.files.grep(%r{^(test|spec|features)/})
+
+  gem.add_dependency 'opener-build-tools'
 
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'cucumber'
-
+  gem.add_development_dependency 'rake'
 end
