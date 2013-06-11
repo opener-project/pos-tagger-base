@@ -7,6 +7,7 @@ Gemfile.lock
 *~
 .rvmrc
 *.pyc
+*.pyo
 
 # Ignore the Python package files.
 core/site-packages/pre_build/*

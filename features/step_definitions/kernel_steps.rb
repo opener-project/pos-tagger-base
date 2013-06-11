@@ -6,8 +6,8 @@ end
 Given /^I put it through the kernel$/ do
   @tmp_filename = "output_#{rand(1000)}_#{@filename}"
   @output = tmp_file(@tmp_filename)
-  
-  `cat #{@input} | python #{KERNEL_CORE} --no-time > #{@output}`
+
+  `cat #{@input} | #{kernel.command} --no-time > #{@output}`
 end
 
 Then /^the output should match the fixture "(.*?)"$/ do |filename|

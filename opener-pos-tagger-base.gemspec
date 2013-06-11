@@ -1,14 +1,14 @@
-require File.expand_path('../lib/VU-pos-tagger-opennlp_NL_kernel', __FILE__)
+require File.expand_path('../lib/opener/pos_taggers/base/version', __FILE__)
 
 generated = Dir.glob('core/site-packages/pre_build/**/*')
 
 Gem::Specification.new do |gem|
-  gem.name        = "VU-pos-tagger-opennlp_NL_kernel"
-  gem.version     = Opener::Kernel::VU::POSTagger::OpenNLP::NL::VERSION
+  gem.name        = 'opener-pos-tagger-base'
+  gem.version     = Opener::POSTaggers::Base::VERSION
   gem.authors     = ['development@olery.com']
   gem.summary     = 'POS tagger for Dutch and German using OpenNLP'
   gem.description = gem.summary
-  gem.homepage    = "http://opener-project.github.com/"
+  gem.homepage    = 'http://opener-project.github.com/'
 
   gem.required_ruby_version = '>= 1.9.2'
 

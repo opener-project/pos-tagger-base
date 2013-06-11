@@ -3,7 +3,7 @@ require_relative 'ext/hack/support'
 
 desc 'Lists all the files of the Gemspec'
 task :files do
-  gemspec = Gem::Specification.load('VU-pos-tagger-opennlp_NL_kernel.gemspec')
+  gemspec = Gem::Specification.load('opener-pos-tagger-base.gemspec')
 
   puts gemspec.files.sort
 end
@@ -29,6 +29,7 @@ namespace :clean do
   desc 'Removes Python .pyc files'
   task :pyc do
     sh('find . -name "*.pyc" -delete')
+    sh('find . -name "*.pyo" -delete')
   end
 
   desc 'Removes tmp files'

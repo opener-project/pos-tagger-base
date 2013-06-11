@@ -1,2 +1,6 @@
-Dir[File.dirname(__FILE__) + '/../../lib/*.rb'].each {|file| require file }
+require_relative '../../lib/opener/pos_taggers/base'
 require 'rspec/expectations'
+
+def kernel
+  return Opener::POSTaggers::Base.new
+end
