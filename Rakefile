@@ -8,26 +8,18 @@ task :requirements do
   require_executable('pip')
 end
 
-desc 'Updates all the submodules'
-task :update_submodules do
-  sh('git submodule foreach git pull origin master')
-end
-
-desc 'Sets up the base structure of the project'
-task :setup => [:requirements] do
+desc 'Installs Python packages in core/site-packages'
+task :compile => :requirements do
   requirements = [
     File.expand_path('../pre_build_requirements.txt', __FILE__),
     File.expand_path('../pre_install_requirements.txt', __FILE__)
   ]
 
-  requirements.each do |file|
-    pip_install(file)
+  if Dir.glob(File.join(PYTHON_SITE_PACKAGES, '*')).empty?
+    requirements.each { |file| pip_install(file) }
+  else
+    puts 'Packages already installed, skipping'
   end
-end
-
-desc 'Compiles/installs Python packages locally'
-task :compile => :requirements do
-
 end
 
 desc 'Cleans up build files'
@@ -42,6 +34,8 @@ task :clean do
 end
 
 desc 'Runs the tests'
-task :test do
+task :test => :compile do
   sh('cucumber features')
 end
+
+task :default => :test
