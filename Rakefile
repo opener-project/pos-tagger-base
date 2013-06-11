@@ -1,41 +1,68 @@
 require 'bundler/gem_tasks'
 require_relative 'ext/hack/support'
 
+desc 'Lists all the files of the Gemspec'
+task :files do
+  gemspec = Gem::Specification.load('VU-pos-tagger-opennlp_NL_kernel.gemspec')
+
+  puts gemspec.files.sort
+end
+
 desc 'Verifies the requirements'
 task :requirements do
-  require_executable('python')
-  require_version('python', python_version, '2.7.0')
-  require_executable('pip')
+  verify_requirements
 end
 
 desc 'Installs Python packages in core/site-packages'
 task :compile => :requirements do
-  requirements = [
-    File.expand_path('../pre_build_requirements.txt', __FILE__),
-    File.expand_path('../pre_install_requirements.txt', __FILE__)
-  ]
+  requirements = {
+    PRE_BUILD_REQUIREMENTS   => 'pre_build',
+    PRE_INSTALL_REQUIREMENTS => 'pre_install'
+  }
 
-  if Dir.glob(File.join(PYTHON_SITE_PACKAGES, '*')).empty?
-    requirements.each { |file| pip_install(file) }
-  else
-    puts 'Packages already installed, skipping'
+  requirements.each do |file, directory|
+    install_python_packages(file, directory)
   end
 end
 
-desc 'Cleans up build files'
-task :clean do
-  sh("rm -f #{File.join(TMP_DIRECTORY, '*.kaf')}")
-
-  Dir.glob(File.join(PYTHON_SITE_PACKAGES, '*')).each do |directory|
-    sh("rm -rf #{directory}")
+namespace :clean do
+  desc 'Removes Python .pyc files'
+  task :pyc do
+    sh('find . -name "*.pyc" -delete')
   end
 
-  sh('find . -name "*.pyc" -delete')
+  desc 'Removes tmp files'
+  task :tmp do
+    sh("rm -f #{File.join(TMP_DIRECTORY, '*.kaf')}")
+  end
+
+  desc 'Removes packages from core/site-packages'
+  task :packages do
+    each_file(PYTHON_SITE_PACKAGES) do |group|
+      each_file(group) do |directory|
+        sh("rm -rf #{directory}")
+      end
+    end
+  end
+
+  desc 'Removes all built Gem files'
+  task :gems do
+    sh('rm -f pkg/*.gem')
+  end
 end
+
+desc 'Cleans up the repository'
+task :clean => ['clean:pyc', 'clean:tmp', 'clean:packages', 'clean:gems']
 
 desc 'Runs the tests'
 task :test => :compile do
   sh('cucumber features')
 end
 
+desc 'Performs preparations for building the Gem'
+task :before_build => [:requirements, 'clean:pyc'] do
+  install_python_packages(PRE_BUILD_REQUIREMENTS, 'pre_build')
+end
+
+task :build   => :before_build
 task :default => :test

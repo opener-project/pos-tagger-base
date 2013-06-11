@@ -7,5 +7,10 @@ Gemfile.lock
 *~
 .rvmrc
 *.pyc
-core/site-packages/*
-!core/site-packages/.gitkeep
+
+# Ignore the Python package files.
+core/site-packages/pre_build/*
+core/site-packages/pre_install/*
+
+# Keep these files.
+!.gitkeep
