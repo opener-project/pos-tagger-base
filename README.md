@@ -1,85 +1,108 @@
+# Base POS Tagger
 
-VU-pos-tagger-opennlp_NL_kernel
-==============================
+This repository contains the source code (both Ruby and Python) for the base
+POS tagger. Currently this tagger supports the following languages:
 
-This module implements a wrapper for the open-nlp pos tagger tool. The input should be KAF text with the token layer (for instance the KAF create by one of our tokenizers).
-The output will be the input KAF extended with the term layer, including the part-of-speech information.
+* Dutch
+* German
 
-The module uses the models trained on the alpino data with the Open-nlp toolkit. This module currently works for Dutch and the pos models have been downloaded from
-http://opennlp.sourceforge.net/models-1.5/
+## Requirements
 
-
-Usage
------
-The main script is the file core/pos-tagger_open-nlp.py. If we have our intput KAF with the token layer in a file called input.token.kaf, we could run the pos-tagger as:
-````shell
-$ cat input.token.kaf | core/pos-tagger_open-nlp.py > out.token.pos.kaf
-````
-This would generate the output file out.token.pos.kaf witht the extenden KAF
-
-All the required libraries and binaries related to Opennlp have been bundled in the repository (in the folder lib.
-
+* Python 2.7.0 or newer
+* Ruby 1.9.2 or newer
+* pip
+* libxml2
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Using Bundler:
 
-    gem 'VU-pos-tagger-opennlp_NL_kernel', :git=>"git@github.com/opener-project/VU-pos-tagger-opennlp_NL_kernel.git"
+    gem 'opener-pos-tagger-base',
+      :git    => 'git@github.com:opener-project/opener-pos-tagger-base.git',
+      :branch => 'master'
 
-And then execute:
+Using `specific_install`:
 
-    $ bundle install
+    gem install specific_install
+    gem specific_install opener-pos-tagger-base \
+        -l https://github.com/opener-project/pos-tagger-base.git
 
-Or install it yourself as:
+Using regular RubyGems (once the Gem is available):
 
-    $ gem specific_install VU-pos-tagger-opennlp_NL_kernel -l https://github.com/opener-project/VU-pos-tagger-opennlp_NL_kernel.git
-
-
-If you dont have specific_install already:
-
-    $ gem install specific_install
+    gem install opener-pos-tagger-base
 
 ## Usage
 
-Once installed as a gem you can access the gem from anywhere:
+Tagging a KAF file:
 
-
-TODO: Change output below as needed
-````shell
-echo "foo" | VU-pos-tagger-opennlp_NL_kernel
-````
-
-Will output
-
-````
-oof
-````
+    cat some_input_file.kaf | opener-pos-tagger-base
 
 ## Contributing
 
-1. Pull it
-2. Create your feature branch (`git checkout -b features/my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin features/my-new-feature`)
-5. If you're confident, merge your changes into master.
+First make sure all the required dependencies are installed:
 
-POS-tags models
----------------
-* Dutch-maxent --> http://opennlp.sourceforge.net/models-1.5/nl-pos-maxent.bin
-* Dutch-perceptron --> http://opennlp.sourceforge.net/models-1.5/nl-pos-perceptron.bin
-* German-maxent --> http://opennlp.sourceforge.net/models-1.5/de-pos-maxent.bin
-* German-perceptron --> http://opennlp.sourceforge.net/models-1.5/de-pos-perceptron.bin
+    bundle install
 
-POS-tags sets
-------------
-* Dutch -->  trained on conllx alpino data, wotan tagset
-* German --> trained on TIGER corpus, STSS tagset
+Then download the required Python code:
 
+    rake compile
 
+Once this is done continue reading the sections below to get a better
+understanding about the repository structure.
 
-Contact
--------
-* Ruben Izquierdo
-* Vrije University of Amsterdam
-* ruben.izquierdobevia@vu.nl
+## Structure
 
+This repository comes in two parts: a collection of Python source files and
+Ruby source code. The Python code can be found in `core/`, the Ruby code can be
+found in the other directories (e.g. `lib/`).
+
+Required Python packages are installed locally in to `core/site-packages/X`
+where X is one of the following two:
+
+* `pre_build`: contains packages that are installed before building the Gem,
+  these packages are shipped with the Gem
+* `pre_insatll`: contains packages that are installed in to this directory upon
+  installing the Gem. This directory should exclusively be used for compiled
+  Python packages such as lxml.
+
+There are also two requirements files for pip:
+
+* `pre_build_requirements.txt`: installs the requirements for the `pre_build`
+  directory.
+* `pre_install_requirements.txt`: installs the requirements for the
+  `pre_install` directory.
+
+To easily install all the required dependencies (required for running the tests
+for example) run the following:
+
+    rake compile
+
+This will take care of verifying the requirements and downloading and
+installing the Python packages.
+
+## Testing
+
+To run the tests (which are powered by Cucumber), simply run the following:
+
+    rake
+
+This will take care of verifying the requirements, installing the Python code
+and running the tests.
+
+For more information on the available Rake tasks run the following:
+
+    rake -T
+
+## POS Details
+
+### POS-tags models
+
+* [Dutch-maxent](http://opennlp.sourceforge.net/models-1.5/nl-pos-maxent.bin)
+* [Dutch-perceptron](http://opennlp.sourceforge.net/models-1.5/nl-pos-perceptron.bin)
+* [German-maxent](http://opennlp.sourceforge.net/models-1.5/de-pos-maxent.bin)
+* [German-perceptron](http://opennlp.sourceforge.net/models-1.5/de-pos-perceptron.bin)
+
+### POS-tags sets
+
+* Dutch: trained on conllx alpino data, wotan tagset
+* German: trained on TIGER corpus, STSS tagset
