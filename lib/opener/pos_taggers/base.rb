@@ -67,5 +67,12 @@ module Opener
         return File.join(core_dir, 'pos-tagger_open-nlp.py')
       end
     end # Base
+    
+    class NL < Base
+    end # NL
+    
+    class DE < Base
+    end # DE
+    
   end # POSTaggers
 end # Opener
