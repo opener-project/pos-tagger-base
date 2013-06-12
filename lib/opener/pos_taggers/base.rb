@@ -19,6 +19,12 @@ module Opener
     class Base
       attr_reader :args, :options, :option_parser
 
+      ##
+      # @param [Hash] options
+      #
+      # @option options [Array] :args The commandline arguments to pass to the
+      #  underlying Python script.
+      #
       def initialize(options = {})
         @args          = options.delete(:args) || []
         @options       = options
@@ -28,7 +34,7 @@ module Opener
       ##
       # Builds the command used to execute the kernel.
       #
-      # @param [Array] args Commandline arguments passed to the command.
+      # @return [String]
       #
       def command
         return "python -E -O #{kernel} #{args.join(' ')}"
@@ -67,12 +73,12 @@ module Opener
         return File.join(core_dir, 'pos-tagger_open-nlp.py')
       end
     end # Base
-    
+
     class NL < Base
     end # NL
-    
+
     class DE < Base
     end # DE
-    
+
   end # POSTaggers
 end # Opener
