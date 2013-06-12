@@ -18,7 +18,7 @@ POS tagger. Currently this tagger supports the following languages:
 Using Bundler:
 
     gem 'opener-pos-tagger-base',
-      :git    => 'git@github.com:opener-project/opener-pos-tagger-base.git',
+      :git    => 'git@github.com:opener-project/pos-tagger-base.git',
       :branch => 'master'
 
 Using `specific_install`:
@@ -35,7 +35,7 @@ Using regular RubyGems (once the Gem is available):
 
 Tagging a KAF file:
 
-    cat some_input_file.kaf | opener-pos-tagger-base
+    cat some_input_file.kaf | pos-tagger-base
 
 ## Contributing
 
