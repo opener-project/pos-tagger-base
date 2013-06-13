@@ -45,7 +45,7 @@ First make sure all the required dependencies are installed:
 
 Then download the required Python code:
 
-    rake compile
+    bundle exec rake compile
 
 Once this is done continue reading the sections below to get a better
 understanding about the repository structure.
@@ -75,7 +75,7 @@ There are also two requirements files for pip:
 To easily install all the required dependencies (required for running the tests
 for example) run the following:
 
-    rake compile
+    bundle exec rake compile
 
 This will take care of verifying the requirements and downloading and
 installing the Python packages.
@@ -84,14 +84,14 @@ installing the Python packages.
 
 To run the tests (which are powered by Cucumber), simply run the following:
 
-    rake
+    bundle exec rake
 
 This will take care of verifying the requirements, installing the Python code
 and running the tests.
 
 For more information on the available Rake tasks run the following:
 
-    rake -T
+    bundle exec rake -T
 
 ## POS Details
 
