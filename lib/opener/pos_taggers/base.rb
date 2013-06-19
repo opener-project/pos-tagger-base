@@ -1,8 +1,5 @@
 require 'open3'
-require 'optparse'
-
 require_relative 'base/version'
-require_relative 'base/option_parser'
 
 module Opener
   module POSTaggers
@@ -17,7 +14,7 @@ module Opener
     #  @return [OptionParser]
     #
     class Base
-      attr_reader :args, :options, :option_parser
+      attr_reader :args, :options
 
       ##
       # @param [Hash] options
@@ -28,7 +25,6 @@ module Opener
       def initialize(options = {})
         @args          = options.delete(:args) || []
         @options       = options
-        @option_parser = OptionParser.new
       end
 
       ##
@@ -48,12 +44,6 @@ module Opener
       # @return [Array]
       #
       def run(input)
-        option_parser.parse(args)
-
-        if !input or input.empty?
-          option_parser.show_help
-        end
-
         return Open3.capture3(command, :stdin_data => input)
       end
 
