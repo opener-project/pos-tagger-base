@@ -37,117 +37,117 @@
     <wf para="1" sent="1" wid="w_23">Nederlandén</wf>
   </text>
   <terms>
-    <term lemma="Beatrix" morphofeat="N" pos="N" tid="t_1" type="open">
+    <term lemma="Beatrix" morphofeat="N" pos="N" tid="t1" type="open">
       <span>
         <target id="w_1"/>
       </span>
     </term>
-    <term lemma="Wilhelmina" morphofeat="N" pos="N" tid="t_2" type="open">
+    <term lemma="Wilhelmina" morphofeat="N" pos="N" tid="t2" type="open">
       <span>
         <target id="w_2"/>
       </span>
     </term>
-    <term lemma="Armgard" morphofeat="N" pos="N" tid="t_3" type="open">
+    <term lemma="Armgard" morphofeat="N" pos="N" tid="t3" type="open">
       <span>
         <target id="w_3"/>
       </span>
     </term>
-    <term lemma="van" morphofeat="Prep" pos="P" tid="t_4" type="close">
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t4" type="close">
       <span>
         <target id="w_4"/>
       </span>
     </term>
-    <term lemma="Oranje" morphofeat="N" pos="N" tid="t_5" type="open">
+    <term lemma="Oranje" morphofeat="N" pos="N" tid="t5" type="open">
       <span>
         <target id="w_5"/>
       </span>
     </term>
-    <term lemma="-Nassau" morphofeat="N" pos="N" tid="t_6" type="open">
+    <term lemma="-Nassau" morphofeat="N" pos="N" tid="t6" type="open">
       <span>
         <target id="w_6"/>
       </span>
     </term>
-    <term lemma="(Baarn" morphofeat="N" pos="N" tid="t_7" type="open">
+    <term lemma="(Baarn" morphofeat="N" pos="N" tid="t7" type="open">
       <span>
         <target id="w_7"/>
       </span>
     </term>
-    <term lemma="," morphofeat="Punc" pos="O" tid="t_8" type="open">
+    <term lemma="," morphofeat="Punc" pos="O" tid="t8" type="open">
       <span>
         <target id="w_8"/>
       </span>
     </term>
-    <term lemma="31" morphofeat="Num" pos="O" tid="t_9" type="open">
+    <term lemma="31" morphofeat="Num" pos="O" tid="t9" type="open">
       <span>
         <target id="w_9"/>
       </span>
     </term>
-    <term lemma="januari" morphofeat="N" pos="N" tid="t_10" type="open">
+    <term lemma="januari" morphofeat="N" pos="N" tid="t10" type="open">
       <span>
         <target id="w_10"/>
       </span>
     </term>
-    <term lemma="1938" morphofeat="Num" pos="O" tid="t_11" type="open">
+    <term lemma="1938" morphofeat="Num" pos="O" tid="t11" type="open">
       <span>
         <target id="w_11"/>
       </span>
     </term>
-    <term lemma=")" morphofeat="Punc" pos="O" tid="t_12" type="open">
+    <term lemma=")" morphofeat="Punc" pos="O" tid="t12" type="open">
       <span>
         <target id="w_12"/>
       </span>
     </term>
-    <term lemma="is" morphofeat="V" pos="V" tid="t_13" type="open">
+    <term lemma="is" morphofeat="V" pos="V" tid="t13" type="open">
       <span>
         <target id="w_13"/>
       </span>
     </term>
-    <term lemma="sinds" morphofeat="Prep" pos="P" tid="t_14" type="close">
+    <term lemma="sinds" morphofeat="Prep" pos="P" tid="t14" type="close">
       <span>
         <target id="w_14"/>
       </span>
     </term>
-    <term lemma="30" morphofeat="Num" pos="O" tid="t_15" type="open">
+    <term lemma="30" morphofeat="Num" pos="O" tid="t15" type="open">
       <span>
         <target id="w_15"/>
       </span>
     </term>
-    <term lemma="april" morphofeat="N" pos="N" tid="t_16" type="open">
+    <term lemma="april" morphofeat="N" pos="N" tid="t16" type="open">
       <span>
         <target id="w_16"/>
       </span>
     </term>
-    <term lemma="1980" morphofeat="Num" pos="O" tid="t_17" type="open">
+    <term lemma="1980" morphofeat="Num" pos="O" tid="t17" type="open">
       <span>
         <target id="w_17"/>
       </span>
     </term>
-    <term lemma="koningin" morphofeat="N" pos="N" tid="t_18" type="open">
+    <term lemma="koningin" morphofeat="N" pos="N" tid="t18" type="open">
       <span>
         <target id="w_18"/>
       </span>
     </term>
-    <term lemma="van" morphofeat="Prep" pos="P" tid="t_19" type="close">
+    <term lemma="van" morphofeat="Prep" pos="P" tid="t19" type="close">
       <span>
         <target id="w_19"/>
       </span>
     </term>
-    <term lemma="het" morphofeat="Art" pos="D" tid="t_20" type="close">
+    <term lemma="het" morphofeat="Art" pos="D" tid="t20" type="close">
       <span>
         <target id="w_20"/>
       </span>
     </term>
-    <term lemma="Koninkrijk" morphofeat="N" pos="N" tid="t_21" type="open">
+    <term lemma="Koninkrijk" morphofeat="N" pos="N" tid="t21" type="open">
       <span>
         <target id="w_21"/>
       </span>
     </term>
-    <term lemma="der" morphofeat="Art" pos="D" tid="t_22" type="close">
+    <term lemma="der" morphofeat="Art" pos="D" tid="t22" type="close">
       <span>
         <target id="w_22"/>
       </span>
     </term>
-    <term lemma="Nederlandén" morphofeat="N" pos="N" tid="t_23" type="open">
+    <term lemma="Nederlandén" morphofeat="N" pos="N" tid="t23" type="open">
       <span>
         <target id="w_23"/>
       </span>
