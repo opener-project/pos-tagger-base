@@ -5,6 +5,3 @@ desc 'Verifies the requirements'
 task :requirements do
   verify_requirements
 end
-
-task :compile => ["python:compile"]
-task :default => [:compile]
