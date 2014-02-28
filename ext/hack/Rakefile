@@ -6,5 +6,5 @@ task :requirements do
   verify_requirements
 end
 
-task :default => [:compile] do
-end
+task :compile => ["python:compile"]
+task :default => [:compile]
