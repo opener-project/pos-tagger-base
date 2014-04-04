@@ -62,9 +62,6 @@ module Opener
       end
     end # Base
 
-    class NL < Base
-    end # NL
-
     class DE < Base
     end # DE
 
