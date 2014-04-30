@@ -5,9 +5,9 @@
       <lp timestamp="2013-05-02T14:07:12CEST" version="1.0" name="Open-nlp sentence splitter"/>
       <lp timestamp="2013-05-02T14:07:12CEST" version="1.0" name="Open-nlp tokenizer"/>
     </linguisticProcessors>
-    <linguisticProcessor layer="term">
+    <linguisticProcessors layer="term">
       <lp timestamp="*" version="1.0" name="Open nlp pos tagger"/>
-    </linguisticProcessor>
+    </linguisticProcessors>
   </kafHeader>
   <text>
     <wf wid="w_1" sent="1">Im</wf>
