@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.summary     = 'POS tagger for Dutch and German using OpenNLP'
   gem.description = gem.summary
   gem.homepage    = 'http://opener-project.github.com/'
+  gem.extensions  = ['ext/hack/Rakefile']
 
   gem.required_ruby_version = '>= 1.9.2'
 
