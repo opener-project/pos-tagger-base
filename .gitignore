@@ -10,8 +10,8 @@ Gemfile.lock
 *.pyo
 
 # Ignore the Python package files.
-core/site-packages/pre_build/*
-core/site-packages/pre_install/*
+core/site-packages/pre_build
+core/site-packages/pre_install
 
 # Keep these files.
 !.gitkeep
