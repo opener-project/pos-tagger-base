@@ -39,10 +39,14 @@ module Opener
       # process information.
       #
       # @param [String] input The input to tag.
-      # @return [Array]
+      # @return [String]
       #
       def run(input)
-        return capture(input)
+        stdout, stderr, process = capture(input)
+
+        raise stderr unless process.success?
+
+        return stdout
       end
 
       protected
@@ -53,9 +57,9 @@ module Opener
         site_packages =  File.join(core_dir, 'site-packages')
         "env PYTHONPATH=#{site_packages}:$PYTHONPATH"
       end
-    
+
       ##
-      # capture3 method doesn't work properly with Jruby, so 
+      # capture3 method doesn't work properly with Jruby, so
       # this is a workaround
       #
       def capture(input)
