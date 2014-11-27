@@ -1,5 +1,7 @@
 require 'open3'
+
 require_relative 'base/version'
+require_relative 'base/de'
 
 module Opener
   module POSTaggers
@@ -86,9 +88,5 @@ module Opener
         return File.join(core_dir, 'pos-tagger_open-nlp.py')
       end
     end # Base
-
-    class DE < Base
-    end # DE
-
   end # POSTaggers
 end # Opener
