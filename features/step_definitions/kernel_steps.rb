@@ -4,16 +4,16 @@ Given /^the fixture file "(.*?)"$/ do |filename|
 end
 
 Given /^I put it through the kernel$/ do
-  @tmp_filename = "output_#{rand(1000)}_#{@filename}"
-  @output = tmp_file(@tmp_filename)
+  kernel = Opener::POSTaggers::Base.new(:args => ['--no-time'])
+  input  = File.read(@input)
 
-  `cat #{@input} | #{kernel.command} --no-time > #{@output}`
+  @output = kernel.run(input)
 end
 
 Then /^the output should match the fixture "(.*?)"$/ do |filename|
   fixture_output = File.read(fixture_file(filename))
-  output = File.read(@output)
-  output.should eql(fixture_output)
+
+  @output.should eql(fixture_output)
 end
 
 def fixture_file(filename)
