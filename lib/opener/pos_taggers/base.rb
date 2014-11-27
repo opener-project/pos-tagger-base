@@ -34,7 +34,7 @@ module Opener
       # @return [String]
       #
       def command
-        return "#{adjust_python_path} python -E #{kernel} #{args.join(' ')}"
+        return "python -E #{kernel} #{args.join(' ')}"
       end
 
       ##
@@ -52,13 +52,6 @@ module Opener
       end
 
       protected
-      ##
-      # @return [String]
-      #
-      def adjust_python_path
-        site_packages =  File.join(core_dir, 'site-packages')
-        "env PYTHONPATH=#{site_packages}:$PYTHONPATH"
-      end
 
       ##
       # capture3 method doesn't work properly with Jruby, so
