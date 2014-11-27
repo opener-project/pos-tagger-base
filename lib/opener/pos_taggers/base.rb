@@ -10,6 +10,7 @@ module Opener
     #
     # @!attribute [r] args
     #  @return [Array]
+    #
     # @!attribute [r] options
     #  @return [Hash]
     #
@@ -23,8 +24,8 @@ module Opener
       #  underlying Python script.
       #
       def initialize(options = {})
-        @args          = options.delete(:args) || []
-        @options       = options
+        @args    = options.delete(:args) || []
+        @options = options
       end
 
       ##
@@ -37,8 +38,7 @@ module Opener
       end
 
       ##
-      # Runs the command and returns the output of STDOUT, STDERR and the
-      # process information.
+      # Runs the POS tagger and returns a KAF document as a String.
       #
       # @param [String] input The input to tag.
       # @return [String]
