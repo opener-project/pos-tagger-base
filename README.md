@@ -1,5 +1,3 @@
-[![Build Status](https://drone.io/github.com/opener-project/pos-tagger-base/status.png)](https://drone.io/github.com/opener-project/pos-tagger-base/latest)
-
 # Base POS Tagger
 
 This repository contains the source code (both Ruby and Python) for the base
